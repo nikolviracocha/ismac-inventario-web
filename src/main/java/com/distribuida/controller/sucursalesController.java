@@ -8,7 +8,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -19,14 +18,14 @@ import com.distribuida.entities.sucursales;
 @RequestMapping("/sucursales")                 //path principal
 public class sucursalesController {
 	
-	
+
 	//JSP.-Java sever page,son las paginas web de tecnologia java
 	
 	@Autowired
 	private sucursalesDAO sucursalesDAO;
 	
 	
-	@GetMapping("/listar")                   // path secundario
+	@GetMapping("/findAll")                   // path secundario
 	public String findAll(Model model) {
 		
 		//try {
@@ -60,8 +59,8 @@ public class sucursalesController {
 				  
 			  }
 			  
-			  if(opcion ==1) return "add-sucursales";  //actualizacion
-			  else return "del-sucursales";            //eliminacion
+			  if(opcion ==1) return "sucursales-add";  //actualizacion
+			  else return "sucursales-del";            //eliminacion
 				
 //			}catch (Exception e) {
 //				//TODO: handle exception
@@ -103,16 +102,15 @@ public class sucursalesController {
 		
 		
 	} 
-          @GetMapping("/del")
-          public String del (@RequestParam ("idsucursales") @Nullable Integer idsucursales) {
-        	
-   //     	try {  
-        	  
-        	  sucursalesDAO.del(idsucursales);
-        	  return "redirect:/sucursales/findAll";
+		@GetMapping("/del")
+		public String del(@RequestParam("idsucursales") @Nullable Integer idsucursales) {
+		    sucursalesDAO.del(idsucursales);
+		    return "redirect:/sucursales/findAll";
+		}
+
 //          }catch (Exception e) {
 //      		//TODO: handle exception
 //        }
         	  
           }
-}
+

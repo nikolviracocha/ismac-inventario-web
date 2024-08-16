@@ -9,37 +9,38 @@
 </head>
 <body>
 
-	<h1>sucursales</h1>
-	
-	<table>
-		<thead>
-			<tr> 
-				<th>idsucursales</th>
-				<th>Nombre</th>
-				<th>Dirección</th>
-				<th>Teléfono</th>
-				<th>Acciones</th>
-			</tr>
-		</thead>
-		<tbody>
-			<c:forEach var="item" items="${sucursales}"> 
-				<tr>
-					<td><c:out value="${item.idsucursales}"/></td>
-					<td><c:out value="${item.nombre}"/></td>
-					<td><c:out value="${item.direccion}"/></td>
-					<td><c:out value="${item.telefono}"/></td>
-					<td>
-						<a href="/sucursales/findOne?idsucursales=${item.idsucursales}&opcion=1">
-							<button>Actualizar</button>
-						</a>
-						<a href="/sucursales/del?idsucursales=${item.idsucursales}">
-							<button>Eliminar</button>
-						</a>
-					</td>
-				</tr>
-			</c:forEach>
-		</tbody>
-	</table>
+    <h1>Sucursales</h1>
+    <button onclick="window.location.href='${pageContext.request.contextPath}/sucursales/findOne?opcion=1'; return false;">Agregar</button>
+    
+        <table>
+    <tr>
+        <th>ID Sucursal</th>
+        <th>Nombre</th>
+        <th>Dirección</th>
+        <th>Teléfono</th>
+        <th>Acciones</th>
+    </tr>
+    <c:forEach var="sucursal" items="${sucursales}">
+        <tr>
+            <td>${sucursal.idsucursales}</td>
+            <td>${sucursal.nombre}</td>
+            <td>${sucursal.direccion}</td>
+            <td>${sucursal.telefono}</td>
+            <td>
+              <button onclick="window.location.href='${pageContext.request.contextPath}/sucursales/findOne?idsucursales=${sucursal.idsucursales}&opcion=1'; return false;">
+                        Actualizar																									
+					</button>
+					
+		<button onclick="window.location.href='/ismac-inventario-web/sucursales/del?idsucursales=${sucursal.idsucursales}'; return false;">
+    Eliminar
+</button>
+		
+</button>
+					
 
-</body>
-</html>
+            </td>
+        </tr>
+    </c:forEach>
+</table>
+    
+  
