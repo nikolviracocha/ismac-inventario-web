@@ -27,9 +27,9 @@
             <td>${sucursal.direccion}</td>
             <td>${sucursal.telefono}</td>
             <td>
-              <button onclick="window.location.href='${pageContext.request.contextPath}/sucursales/findOne?idsucursales=${sucursal.idsucursales}&opcion=1'; return false;">
-                        Actualizar																									
-					</button>
+                   <button onclick="window.location.href='/ismac-inventario-web/sucursales/findOne?idsucursales=${item.idsucursales}&opcion=1'; return false;">
+    Actualizar
+</button>
 					
 		<button onclick="window.location.href='/ismac-inventario-web/sucursales/del?idsucursales=${sucursal.idsucursales}'; return false;">
     Eliminar

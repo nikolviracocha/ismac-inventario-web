@@ -16,17 +16,17 @@
     <br/>
 
     <!-- Campo para el nombre de la sucursal -->
-    Nombre
+    <label for="Nombre">Nombre</label>
     <input type="text" id="nombre" name="nombre" value="${sucursal.nombre}">
     <br/>
 
     <!-- Campo para la dirección de la sucursal -->
-    Dirección
+   <label for="Direccion">Direccion</label>
     <input type="text" id="direccion" name="direccion" value="${sucursal.direccion}">
     <br/>
 
     <!-- Campo para el teléfono de la sucursal -->
-    Teléfono
+    <label for="Telefono">Telefono</label>
     <input type="text" id="telefono" name="telefono" value="${sucursal.telefono}">
     <br/>
 
