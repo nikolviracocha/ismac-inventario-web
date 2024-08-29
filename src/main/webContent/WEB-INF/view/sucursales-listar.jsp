@@ -46,10 +46,10 @@
                             <td>${sucursal.telefono}</td>
                             <td>
                                 <button class="btn btn-success" onclick="window.location.href='/ismac-inventario-web/sucursales/findOne?idsucursales=${sucursal.idsucursales}&opcion=1'; return false;">
-                                    <i class="fa-solid fa-pen-to-square"></i> 
+                                    <i class="fa-solid fa-pen-to-square"></i> Actualizar
                                 </button>
                                 <button class="btn btn-danger" onclick="window.location.href='/ismac-inventario-web/sucursales/findOne?idsucursales=${sucursal.idsucursales}&opcion=2'; return false;">
-                                    <i class="fa-solid fa-trash"></i> 
+                                    <i class="fa-solid fa-trash"></i> Eliminar
                                 </button>
                             </td>
                         </tr>
