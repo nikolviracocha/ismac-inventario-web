@@ -87,8 +87,8 @@ public class sucursalesController {
 			
 			}else {
 				
-				sucursales sucursales2 = new sucursales(idsucursales,nombre,direccion,telefono);
-				sucursalesDAO.up(sucursales2);
+				sucursales sucursales = new sucursales(idsucursales,nombre,direccion,telefono);
+				sucursalesDAO.up(sucursales);
 			}
 			
 		
